@@ -1,7 +1,12 @@
 {
-  "name": "portfolio",
+  "name": "next-13-tut",
   "version": "0.1.0",
   "private": true,
+  "author": {
+    "email": "g.ionutcatalin@protonmail.com",
+    "name": "Catalin Gheorghiu",
+    "url": "https://github.com/CatalinGheorghiu"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
