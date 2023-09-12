@@ -1,4 +1,6 @@
 import TicketList from '@/app/tickets/TicketList';
+import { Suspense } from 'react';
+import Loading from '@/app/loading';
 
 interface TicketsProps {}
 
@@ -13,8 +15,9 @@ const Tickets = ({}: TicketsProps) => {
           </p>
         </div>
       </nav>
-
-      <TicketList />
+      <Suspense fallback={<Loading />}>
+        <TicketList />
+      </Suspense>
     </section>
   );
 };
