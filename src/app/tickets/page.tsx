@@ -1,10 +1,8 @@
-import TicketList from '@/app/tickets/TicketList';
-import { Suspense } from 'react';
-import Loading from '@/app/loading';
+import TicketList from "@/app/tickets/TicketList";
+import { Suspense } from "react";
+import Loading from "@/app/loading";
 
-interface TicketsProps {}
-
-const Tickets = ({}: TicketsProps) => {
+const Tickets = () => {
   return (
     <section>
       <nav>
