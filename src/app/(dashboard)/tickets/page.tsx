@@ -1,6 +1,6 @@
-import TicketList from "@/app/tickets/TicketList";
+import TicketList from "@/app/(dashboard)/tickets/TicketList";
 import { Suspense } from "react";
-import Loading from "@/app/loading";
+import Loading from "@/app/(dashboard)/loading";
 
 const Tickets = () => {
   return (
