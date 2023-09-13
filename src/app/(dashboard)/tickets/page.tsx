@@ -1,7 +1,11 @@
 import TicketList from "@/app/(dashboard)/tickets/TicketList";
 import { Suspense } from "react";
 import Loading from "@/app/(dashboard)/loading";
+import { Metadata } from "next";
 
+export const metadata: Metadata = {
+  title: "Dojo help desk - Tickets"
+};
 const Tickets = () => {
   return (
     <section>

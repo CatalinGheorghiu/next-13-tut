@@ -8,6 +8,14 @@ interface TicketDetailsProps {
 
 export const dynamicParams = true;
 
+export async function generateMetadata({ params }: TicketDetailsProps) {
+  const { title } = await getTicket(params.id);
+
+  return {
+    title: `Dojo help desk - ${title}`
+  };
+}
+
 export async function generateStaticParams() {
   const res = await fetch("http://localhost:4000/tickets");
   const tickets = await res.json();
