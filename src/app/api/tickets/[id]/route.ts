@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 
 export const dynamic = "force-dynamic";
 
-export async function GET(_, { params }) {
+export async function GET(_: Request, { params }: { params: { id: string } }) {
   const id = params.id;
   const res = await fetch(`http://localhost:4000/tickets/${id}`);
   const ticket = await res.json();

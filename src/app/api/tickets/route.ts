@@ -11,7 +11,7 @@ export async function GET() {
   });
 }
 
-export async function POST(request) {
+export async function POST(request: Request) {
   const ticket = await request.json();
   const res = await fetch("http://localhost:4000/tickets", {
     method: "POST",
