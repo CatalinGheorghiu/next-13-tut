@@ -55,6 +55,13 @@
       "priority": "low",
       "user_email": "mario@netninja.dev",
       "id": "NM5ZM8D"
+    },
+    {
+      "title": "My ticket",
+      "body": "My ticket description",
+      "priority": "low",
+      "user_email": "luigi@netninja.dev",
+      "id": "JyHZ0-U"
     }
   ]
 }
