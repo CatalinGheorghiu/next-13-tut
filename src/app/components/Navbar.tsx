@@ -1,10 +1,15 @@
-import Link from 'next/link';
-import Image from 'next/image';
-import Logo from './dojo-logo.png';
+import Link from "next/link";
+import Image from "next/image";
+import Logo from "./dojo-logo.png";
+import LogoutBtn from "@/app/components/LogoutBtn";
 
-interface NavbarProps {}
+interface NavbarProps {
+  user?: {
+    email?: string;
+  };
+}
 
-const Navbar = ({}: NavbarProps) => {
+const Navbar = ({ user }: NavbarProps) => {
   return (
     <nav className="">
       <Image
@@ -15,8 +20,12 @@ const Navbar = ({}: NavbarProps) => {
         placeholder="blur"
       />
       <h1>Dojo Helpdesk</h1>
-      <Link href={'/'}>Dashboard</Link>
-      <Link href={'/tickets'}>Tickets</Link>
+      <Link href={"/"}>Dashboard</Link>
+      <Link className="mr-auto" href={"/tickets"}>
+        Tickets
+      </Link>
+      {user && <span>Hello, {user.email}</span>}
+      <LogoutBtn />
     </nav>
   );
 };
