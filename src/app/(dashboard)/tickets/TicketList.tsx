@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
+import { cookies } from "next/headers";
 
 interface TicketProps {
   id: string;
@@ -8,18 +10,20 @@ interface TicketProps {
 }
 
 async function getTickets() {
-  const res = await fetch("http://localhost:4000/tickets", {
-    next: {
-      revalidate: 0 // use 0 to opt out of using cache
-    }
-  });
+  const supabase = createServerComponentClient({ cookies });
 
-  return res.json();
+  const { data, error } = await supabase.from("Tickets").select();
+
+  if (error) {
+    console.log(error.message);
+  }
+
+  return data;
 }
 
 const TicketList = async () => {
   // Fetch data
-  const tickets = await getTickets();
+  const tickets = (await getTickets()) || [];
 
   return (
     <>
